@@ -1,0 +1,135 @@
+:root {
+  --bg-1: #0e5e5a;
+  --bg-2: #f08a24;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --ink: #12212a;
+  --accent: #1b9aaa;
+  --accent-2: #e56b4a;
+  --success: #2f9e44;
+  --danger: #d9480f;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  min-height: 100vh;
+  color: var(--ink);
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 45%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}
+
+.game-shell {
+  max-width: 760px;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+.option-btn {
+  text-align: left;
+  border-radius: 14px;
+  border: 2px solid rgba(18, 33, 42, 0.1);
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.option-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  border-color: rgba(27, 154, 170, 0.45);
+}
+
+.option-btn.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(27, 154, 170, 0.2);
+}
+
+.option-btn.correct {
+  border-color: var(--success);
+  background: rgba(47, 158, 68, 0.12);
+  color: #1a3d1f;
+}
+
+.option-btn.wrong {
+  border-color: var(--danger);
+  background: rgba(217, 72, 15, 0.12);
+  color: #532013;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.btn-accent:hover {
+  background: #167d8a;
+  color: #fff;
+}
+
+.btn-outline-ink {
+  border: 2px solid rgba(18, 33, 42, 0.25);
+  color: var(--ink);
+}
+
+.btn-outline-ink:hover {
+  background: rgba(18, 33, 42, 0.08);
+  color: var(--ink);
+}
+
+.fade-slide {
+  animation: fadeSlide 0.35s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timer-ring {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) 0deg, #e5e7eb 0deg);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.timer-ring span {
+  background: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+}
+
+.score-pill {
+  background: #fff4e6;
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-weight: 600;
+}
+
+.section-hidden {
+  display: none;
+}
